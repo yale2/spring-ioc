@@ -1,0 +1,20 @@
+package com.lagou.edu.config;
+
+
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
+
+import java.lang.reflect.Method;
+
+/**
+ * @author yale
+ */
+public class MyMethodInterceptor implements MethodInterceptor {
+    @Override
+    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+        System.out.println("======cglib代理对象插入前置通知======");
+        Object object = methodProxy.invokeSuper(o, objects);
+        System.out.println("======cglib代理对象插入后置通知======");
+        return object;
+    }
+}

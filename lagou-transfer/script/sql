@@ -1,0 +1,6 @@
+create database test;
+use test;
+drop table if EXISTS account;
+create table account(card_no varchar(20),name varchar(20),money decimal(10,2));
+insert into account(card_no,name,money) values('6029621011001','韩梅梅',10000);
+insert into account(card_no,name,money) values('6029621011000','李大雷',10000);
